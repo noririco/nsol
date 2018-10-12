@@ -1,0 +1,16 @@
+
+// Use this to create the background image
+// usage:
+// @include backgroundImg(......) { opacity: 0.7 }
+// $imgURI is mandatory
+
+@mixin backgroundImg($imgURI, $withBackgroundColor: #f1f1f1, $height: 100vh) {
+    height: $height;
+    background-color: $withBackgroundColor;
+    background-image: url($imgURI);
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @content;
+}

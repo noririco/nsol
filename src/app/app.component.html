@@ -1,0 +1,53 @@
+<div class="alternative routeContainer" [@routeAnimation]="getDepth(myOutlet)">
+    <mat-sidenav-container fullscreen>
+    
+        <mat-sidenav #start>
+            <mat-nav-list (click)="start.close()">
+    
+                <a mat-list-item routerLink="/courses">
+                    <mat-icon>library_books</mat-icon>
+                    <span>Courses</span>
+                </a>
+                <a mat-list-item routerLink="/movies">
+                    <mat-icon>library_books</mat-icon>
+                    <span>Movies</span>
+                </a>
+    
+                <a mat-list-item routerLink="/login" *ngIf="isLoggedOut$ | async">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Login</span>
+                </a>
+    
+                <a mat-list-item  (click)="logout()" *ngIf="isLoggedIn$ | async">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </a>
+    
+            </mat-nav-list>
+    
+        </mat-sidenav>
+    
+        <mat-toolbar color="primary" class="toolbar-main">
+            <mat-toolbar-row>
+                <span>NSNSOLUTIONS</span>
+                <!-- This fills the remaining space of the current row -->
+                <span class="toolbar-quote-title"><small>when poclmicated becomes simple..</small></span>
+                <span class="example-fill-remaining-space"></span>
+                <span class="example-fill-remaining-space"></span>
+                <span>
+                    <button class="menu-button" mat-icon-button (click)="start.open('mouse')">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </span>
+            </mat-toolbar-row>
+            <mat-toolbar-row *ngIf="isLoggedIn$ | async">
+                <span><a href="https://placeholder.com"><img src="https://png.icons8.com/dusk/50/000000/support.png"></a></span>
+                <span class="toolbar-username"><small>{{currentUser$ | async}}</small></span>
+                <span class="example-fill-remaining-space"></span>
+            </mat-toolbar-row>         
+        </mat-toolbar>
+        
+        
+        <router-outlet #myOutlet="outlet"></router-outlet>
+    </mat-sidenav-container>
+</div>

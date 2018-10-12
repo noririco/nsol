@@ -1,0 +1,40 @@
+
+body {
+    margin: 0;
+}
+
+main {
+    margin: 30px;
+}
+
+.menu-button {
+    background: #607d8b;
+    color: white;
+    border: none;
+    cursor:pointer;
+    outline:none;
+}
+
+.toolbar-main{
+    z-index: 11;
+}
+
+/* Routing animation purpose*/
+/* .routeContainer {
+    position: relative;
+}
+.routeContainer > * {
+    display: block;
+} */
+
+
+
+.toolbar-quote-title {
+    margin-left: 1rem;
+    font-style: italic;
+}
+
+.toolbar-username {
+    margin-left: 1rem;
+}
+

@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+@import 'theme.scss';
+
+.note-line {
+    color: mat-color($alt-warn);
+}
+
+.movie-item {
+    cursor: pointer;
+    // background-color: lighten(purple,50%);
+    border: 2px solid mat-color($alt-primary);
+    border-radius: 0.2rem;
+    // background-color: mat-color($primary);
+    
+    a {
+        text-decoration: none;
+        font-weight: 800;
+    }
+
+    .movie-icon {
+        color: mat-color($alt-primary);
+    }
+}
+

@@ -1,0 +1,60 @@
+@import "~@angular/material/theming";
+// Include non-theme styles for core.
+@include mat-core();
+
+/**
+    NOTE: define a theme based on this.
+    @function mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+        @return (
+            primary: $primary,
+            accent: $accent,
+            warn: $warn,
+            is-dark: false,
+            foreground: $mat-light-theme-foreground,
+            background: $mat-light-theme-background,
+        );
+    }
+*/
+
+// Define a theme.
+$primary: mat-palette($mat-deep-purple);
+$accent:  mat-palette($mat-pink);
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+
+
+
+//another use case, wrapping the whole app with this class will force this theme
+$alt-primary: mat-palette($mat-light-green);
+$alt-accent:  mat-palette($mat-grey,200);
+$alt-warn: mat-palette($mat-red);
+
+$alt-theme: mat-light-theme($alt-primary, $alt-accent, $alt-warn);
+
+.alternative {
+    @include angular-material-theme($alt-theme);
+}
+
+
+//mixins
+@mixin ml-file-tree-theme($theme) {
+
+    $primary: map-get($theme, primary);
+    $accent: map-get($thme, accent);
+    $warn: map-get($theme, warn);
+    // $background: map-get($theme, background);
+    // $foreground: map-get($theme, foreground);
+
+}
+
+
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+
+

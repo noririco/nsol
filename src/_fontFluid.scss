@@ -1,0 +1,16 @@
+/* 1rem @ 48em (768px) increasing to 2rem @ 120em (1920px) */
+@media (min-width: 48em) {
+    :root {
+      font-size: calc(1rem + ((1vw - .48rem) * 1.389));
+      /* .48rem = viewportWidthMinimum /100 */
+      /* 1.389rem = 100 * fontSizeDifference / viewportWidthDifference */
+    }
+  }
+
+
+/* Stop font scaling above 1920px */
+@media (min-width: 120em) {
+    :root {
+        font-size: 2rem;
+    }
+}
