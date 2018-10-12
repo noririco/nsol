@@ -1,3 +1,7 @@
+@import '~@angular/material/theming';
+@import 'styles.scss';
+
+
 .spinner-container {
     height: 340px;
     width: 390px;
@@ -5,4 +9,8 @@
     background: white;
     margin-top: 70px;
     z-index: 1;
+}
+
+.mat-card {
+    background-color: mat-color($primary,lighter);
 }

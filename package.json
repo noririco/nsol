@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deployngh": "ng build --prod --base-href https://noririco.github.io/nsol/"
   },
   "private": true,
   "dependencies": {

@@ -10,6 +10,9 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieResolver } from "./services/movie.resolver";
 import { moviesReducer } from './movie.reducers';
 import { MovieEffects } from './movie.effects';
+import { YoutubeSanitizerPipe } from './../shared/pipes/youtube-sanitizer.pipe';
+
+
 
 //Angular Material
 import {MatListModule} from '@angular/material/list';
@@ -48,8 +51,8 @@ export const moviesRoutes: Routes = [
     StoreModule.forFeature('movies', moviesReducer),
     EffectsModule.forFeature([MovieEffects])
   ],
-  declarations: [HomeComponent, MovieListComponent, MovieDetailsComponent],
-  exports: [HomeComponent, MovieListComponent, MovieDetailsComponent],
+  declarations: [HomeComponent, MovieListComponent, MovieDetailsComponent, YoutubeSanitizerPipe],
+  exports: [HomeComponent, MovieListComponent, MovieDetailsComponent, YoutubeSanitizerPipe],
   providers: [MoviesService,MovieResolver]
 })
 export class MoviesModule { }

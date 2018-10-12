@@ -1,16 +1,19 @@
 @import '~@angular/material/theming';
-@import 'theme.scss';
+@import 'styles.scss';
 
 .note-line {
-    color: mat-color($alt-warn);
+    color: mat-color($warn,darker);
 }
 
 .movie-item {
     cursor: pointer;
-    // background-color: lighten(purple,50%);
-    border: 2px solid mat-color($alt-primary);
+    border: 2px solid mat-color($primary,darker);
     border-radius: 0.2rem;
-    // background-color: mat-color($primary);
+    @include shadowBoxEffect();
+    
+    &:focus {
+        outline: none;
+    }
     
     a {
         text-decoration: none;
@@ -18,7 +21,6 @@
     }
 
     .movie-icon {
-        color: mat-color($alt-primary);
+        color: mat-color($primary,darker);
     }
 }
-

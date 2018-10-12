@@ -1,3 +1,5 @@
+@import '~@angular/material/theming';
+@import 'styles.scss';
 
 body {
     margin: 0;
@@ -8,8 +10,8 @@ main {
 }
 
 .menu-button {
-    background: #607d8b;
-    color: white;
+    background: mat-color($primary,lighter);
+    color: mat-color($primary);
     border: none;
     cursor:pointer;
     outline:none;

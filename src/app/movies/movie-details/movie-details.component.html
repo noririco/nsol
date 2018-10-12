@@ -9,6 +9,7 @@
   <h5>{{moviex?.description}}</h5>
   <h5>{{moviex?.imageUrl}}</h5>
   <h5>{{moviex?.promoUrl}}</h5>
+  <iframe width="560" height="315" [src]="moviex?.promoUrl | youtubeSanitizer" frameborder="0" allowfullscreen></iframe>
   <h5>{{moviex?.rate}}</h5>
   <h5>{{moviex?.hour}}</h5>
 </div>

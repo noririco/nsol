@@ -27,12 +27,12 @@ import {CustomSerializer} from './shared/utils';
 
 
 const routes: Routes = [
-    {
-        path: 'courses',
-        data: {animation: 'CoursesPage'},
-        loadChildren: './courses/courses.module#CoursesModule',
-        canActivate: [AuthGuard],
-    },
+    // {
+    //     path: 'courses',
+    //     data: {animation: 'CoursesPage'},
+    //     loadChildren: './courses/courses.module#CoursesModule',
+    //     canActivate: [AuthGuard],
+    // },
     {
         path: 'movies',
         data: {animation: 'MoviesPage'},

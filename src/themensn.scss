@@ -48,57 +48,13 @@ $mat-custom-theme: (
                 A700: $light-primary-text,
         )
 );
-$nsn-green-primary : mat-palette($mat-custom-theme, 500, 800, 200);
-$nsn-green-accent : mat-palette($mat-custom-theme, 500, 800, 200);
-$nsn-green-warn : mat-palette($mat-red, 200, 800, 200);
-$nsn-green-is-dark : false;
-$nsn-green-foreground : mat-palette($mat-custom-theme, 500, 800, 200);
-$nsn-green-background : mat-palette($mat-custom-theme, 500, 800, 200);
+$primary : mat-palette($mat-custom-theme, 700, 200, 800);
+$accent : mat-palette($mat-custom-theme, 500, 800, 200);
+$warn : mat-palette($mat-red);
+$is-dark : false;
+$foreground : mat-palette($mat-custom-theme, 500, 800, 200);
+$background : mat-palette($mat-custom-theme, 500, 800, 200);
 
-$nsngreen-theme: mat-light-theme($nsn-green-primary, $nsn-green-accent, $nsn-green-warn);
+$nsngreen-theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($nsngreen-theme);
-
-
-// Define a theme.
-$primary: mat-palette($mat-deep-purple);
-$accent:  mat-palette($mat-pink);
-$warn: mat-palette($mat-red);
-
-$theme: mat-light-theme($primary, $accent, $warn);
-
-// Include all theme styles for the components.
-@include angular-material-theme($theme);
-
-
-
-//another use case, wrapping the whole app with this class will force this theme
-$alt-primary: mat-palette($mat-light-green);
-$alt-accent:  mat-palette($mat-grey,200);
-$alt-warn: mat-palette($mat-red);
-
-$alt-theme: mat-light-theme($alt-primary, $alt-accent, $alt-warn);
-
-.alternative {
-    @include angular-material-theme($alt-theme);
-}
-
-
-//mixins
-@mixin ml-file-tree-theme($theme) {
-
-    $primary: map-get($theme, primary);
-    $accent: map-get($thme, accent);
-    $warn: map-get($theme, warn);
-    // $background: map-get($theme, background);
-    // $foreground: map-get($theme, foreground);
-
-}
-
-
-.example-fill-remaining-space {
-    flex: 1 1 auto;
-}
-
-
-

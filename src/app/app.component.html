@@ -1,13 +1,13 @@
-<div class="alternative routeContainer" [@routeAnimation]="getDepth(myOutlet)">
+<div class="routeContainer" [@routeAnimation]="getDepth(myOutlet)">
     <mat-sidenav-container fullscreen>
     
         <mat-sidenav #start>
             <mat-nav-list (click)="start.close()">
     
-                <a mat-list-item routerLink="/courses">
+                <!-- <a mat-list-item routerLink="/courses">
                     <mat-icon>library_books</mat-icon>
                     <span>Courses</span>
-                </a>
+                </a> -->
                 <a mat-list-item routerLink="/movies">
                     <mat-icon>library_books</mat-icon>
                     <span>Movies</span>
