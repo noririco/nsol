@@ -7,8 +7,10 @@
 
 .movie-item {
     cursor: pointer;
-    border: 2px solid mat-color($primary,darker);
+    // border: 2px solid mat-color($primary,darker);
     border-radius: 0.2rem;
+    background-color: mat-color($primary,lighter);
+
     @include shadowBoxEffect();
     
     &:focus {

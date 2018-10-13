@@ -6,6 +6,11 @@
 @import '~_mixins.scss';
 @import '~themensn.scss';
 
+
+body {
+    background-color: black;
+}
+
 .example-fill-remaining-space {
     flex: 1 1 auto;
 }

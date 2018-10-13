@@ -12,5 +12,19 @@
 }
 
 .mat-card {
-    background-color: mat-color($primary,lighter);
+    background-color: $bg-black;
+
+    .sortingBtn {
+        background-color: mat-color($primary, darker);
+        color: black;
+        margin-right: 0.2rem;
+    }
+
+    .card-title {
+        color: mat-color($primary, darker);
+    }
+
+    .card-subtitle {
+        color: mat-color($primary, lighter);
+    }
 }

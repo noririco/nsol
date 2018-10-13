@@ -1,5 +1,5 @@
 <div class="routeContainer" [@routeAnimation]="getDepth(myOutlet)">
-    <mat-sidenav-container fullscreen>
+    <mat-sidenav-container fullscreen class="sidenavContainer">
     
         <mat-sidenav #start>
             <mat-nav-list (click)="start.close()">
@@ -44,6 +44,7 @@
                 <span><a href="https://placeholder.com"><img src="https://png.icons8.com/dusk/50/000000/support.png"></a></span>
                 <span class="toolbar-username"><small>{{currentUser$ | async}}</small></span>
                 <span class="example-fill-remaining-space"></span>
+                <nowtime></nowtime>
             </mat-toolbar-row>         
         </mat-toolbar>
         

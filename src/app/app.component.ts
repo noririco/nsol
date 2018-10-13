@@ -1,3 +1,4 @@
+import { routeAnimation2 } from './shared/_animations/routeAnimation2';
 import { routeAnimation } from './shared/_animations/routeAnimation';
 
 import { User } from './model/user.model';
@@ -9,12 +10,14 @@ import {Logout} from './auth/auth.actions';
 import {map, tap, switchMap, mergeMap} from 'rxjs/operators';
 import { isLoggedIn, isLoggedOut, currentUser, selectAuthState } from './auth/auth.selectors';
 import {Router, RouterOutlet} from '@angular/router';
+import { NowtimeComponent } from './shared/components/nowtime/nowtime.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    routeAnimation
+    routeAnimation,
+    routeAnimation2
   ]
 })
 export class AppComponent implements OnInit {

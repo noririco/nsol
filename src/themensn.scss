@@ -48,6 +48,8 @@ $mat-custom-theme: (
                 A700: $light-primary-text,
         )
 );
+$bg-black : rgba(29, 28, 28, 0.85);
+
 $primary : mat-palette($mat-custom-theme, 700, 200, 800);
 $accent : mat-palette($mat-custom-theme, 500, 800, 200);
 $warn : mat-palette($mat-red);

@@ -24,6 +24,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './reducers';
 import {AuthGuard} from './auth/auth.guard';
 import {CustomSerializer} from './shared/utils';
+import { NowtimeComponent } from './shared/components/nowtime/nowtime.component';
 
 
 const routes: Routes = [
@@ -48,7 +49,8 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        NowtimeComponent
     ],
     imports: [
         BrowserModule,

@@ -7,11 +7,14 @@ import { select } from '@ngrx/store';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../reducers/index';
 import { Movie } from './../model/movie.model';
+import { listStaggerAnimation } from './../../shared/_animations/listStaggerAnimation';
+
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  animations: [ listStaggerAnimation ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
@@ -23,7 +26,7 @@ export class HomeComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.sortCategories = ['Name', 'Date', 'Category', 'Rate'];
+    this.sortCategories = ['Name', 'Date'];
 
     this.isAllMoviesLoaded$ = this.store.pipe(select(allMoviesLoaded));
 

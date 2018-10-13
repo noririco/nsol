@@ -51,6 +51,7 @@ export const routeAnimation = trigger('routeAnimation', [
   transition('MovieDetailsPage => MoviesPage', [
     /* order */
     /* 1 */
+    
     query(':enter, :leave', style({
       position: 'fixed',
       width: '100%'
@@ -79,43 +80,46 @@ export const routeAnimation = trigger('routeAnimation', [
       ], {
         optional: true
       }),
+      query('@listStaggerAnimation', [
+        animateChild()
+      ]),
     ])
   ]),
-  transition('* => MoviesPage', [
-    /* order */
-    /* 1 */
-    query(':enter, :leave', style({
-      position: 'fixed',
-      width: '100%',
-      'z-index': -3
-    }), {
-      optional: true
-    }),
-    /* 2 */
-    group([ // block executes in parallel
-      query(':enter', [
-        style({
-          transform: 'translateY(-100%)'
-        }),
-        animate('0.5s cubic-bezier(.35, 0, .25, 1)', style({
-          transform: 'translateY(0%)'
-        }))
-      ], {
-        optional: true
-      }),
-      query(':leave', [
-        style({
-          opacity:0,
-          transform: 'translateY(0%)'
-        }),
-        animate('0.5s cubic-bezier(.35, 0, .25, 1)', style({
-          transform: 'translateY(100%)'
-        }))
-      ], {
-        optional: true
-      }),
-    ])
-  ]),
+  // transition('* => MoviesPage', [
+  //   /* order */
+  //   /* 1 */
+  //   query(':enter, :leave', style({
+  //     position: 'fixed',
+  //     width: '100%',
+  //     'z-index': -3
+  //   }), {
+  //     optional: true
+  //   }),
+  //   /* 2 */
+  //   group([ // block executes in parallel
+  //     query(':enter', [
+  //       style({
+  //         transform: 'translateY(-100%)'
+  //       }),
+  //       animate('0.5s cubic-bezier(.35, 0, .25, 1)', style({
+  //         transform: 'translateY(0%)'
+  //       }))
+  //     ], {
+  //       optional: true
+  //     }),
+  //     query(':leave', [
+  //       style({
+  //         opacity:0,
+  //         transform: 'translateY(0%)'
+  //       }),
+  //       animate('0.5s cubic-bezier(.35, 0, .25, 1)', style({
+  //         transform: 'translateY(100%)'
+  //       }))
+  //     ], {
+  //       optional: true
+  //     }),
+  //   ])
+  // ]),
   transition('* => CoursesPage', [
     /* order */
     /* 1 */
