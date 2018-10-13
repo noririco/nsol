@@ -1,4 +1,7 @@
-<div class="routeContainer" [@routeAnimation]="getDepth(myOutlet)">
+<div class="routeContainer"
+ [@routeAnimation]="getDepth(myOutlet)"
+ (@routeAnimation.start)="routeAnimationStart($event)"
+ (@routeAnimation.done)="routeAnimationDone($event)">
     <mat-sidenav-container fullscreen class="sidenavContainer">
     
         <mat-sidenav #start>
@@ -29,7 +32,7 @@
     
         <mat-toolbar color="primary" class="toolbar-main">
             <mat-toolbar-row>
-                <span>NSNSOLUTIONS</span>
+                <span class="toolbar-logo">NSNSOLUTIONS</span>
                 <!-- This fills the remaining space of the current row -->
                 <span class="toolbar-quote-title"><small>when poclmicated becomes simple..</small></span>
                 <span class="example-fill-remaining-space"></span>
@@ -41,14 +44,21 @@
                 </span>
             </mat-toolbar-row>
             <mat-toolbar-row *ngIf="isLoggedIn$ | async">
-                <span><a href="https://placeholder.com"><img src="https://png.icons8.com/dusk/50/000000/support.png"></a></span>
+                <span class="toolbar-usericon"><a href="https://placeholder.com"><img src="https://png.icons8.com/dusk/50/000000/support.png"></a></span>
                 <span class="toolbar-username"><small>{{currentUser$ | async}}</small></span>
                 <span class="example-fill-remaining-space"></span>
-                <nowtime></nowtime>
+                <app-nowtime></app-nowtime>
             </mat-toolbar-row>         
         </mat-toolbar>
+
+        <div class="routerOutlet-content">
+            <router-outlet #myOutlet="outlet"></router-outlet>
+        </div>
         
         
-        <router-outlet #myOutlet="outlet"></router-outlet>
+            <mat-toolbar class="toolbar-footer" *ngIf="isRouteAnimationDone">
+                    <span class="toolbar-footer-sign">nsnsolutions @ 2018</span>
+            </mat-toolbar>
+       
     </mat-sidenav-container>
 </div>

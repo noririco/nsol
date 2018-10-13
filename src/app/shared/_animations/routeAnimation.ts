@@ -28,20 +28,25 @@ export const routeAnimation = trigger('routeAnimation', [
     group([ // block executes in parallel
       query(':enter', [
         style({
-          transform: 'translateX(100%)'
+          transform: 'translateX(100%) scale(1)',
+          opacity: 0,
         }),
-        animate('0.5s ease-in-out', style({
-          transform: 'translateX(0%)'
+        animate('1s cubic-bezier(0.680, -0.550, 0.265, 1.550)', style({
+          transform: 'translateX(0%)',
+          opacity: 1
+          
         }))
       ], {
         optional: true
       }),
       query(':leave', [
         style({
-          transform: 'translateX(0%)'
+          transform: 'translateX(0%)',
+          opacity: 0.15,
         }),
         animate('0.5s ease-in-out', style({
-          transform: 'translateX(-100%)'
+          transform: 'translateX(-100%)',
+          opacity: 0,
         }))
       ], {
         optional: true
@@ -62,10 +67,12 @@ export const routeAnimation = trigger('routeAnimation', [
     group([ // block executes in parallel
       query(':enter', [
         style({
-          transform: 'translateX(-100%)'
+          transform: 'translateX(-100%)',
+          opacity: 0
         }),
         animate('0.5s ease-in-out', style({
-          transform: 'translateX(0%)'
+          transform: 'translateX(0%)',
+          opacity: 1
         }))
       ], {
         optional: true

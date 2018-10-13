@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'nowtime',
+  selector: 'app-nowtime',
   templateUrl: './nowtime.component.html',
   styleUrls: ['./nowtime.component.scss']
 })

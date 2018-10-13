@@ -1,0 +1,46 @@
+@import '~@angular/material/theming';
+@import 'styles.scss';
+
+.movie-details-page {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    color : mat-color($primary, lighter);
+
+    * {
+        margin-bottom: 2rem;
+    }
+
+    .movie-details-subtitles {
+        display: flex;
+        flex-direction: row;
+        p {
+            margin: 0.2rem;
+            font-size: 1.3rem;
+        }
+
+        .movie-year {
+    
+        }
+        .movie-category {
+    
+        }
+        /** 
+         *   Prior to alignment via ‘justify-content’ and ‘align-self’, any positive free space is distributed to auto margins in that dimension.
+         *  So if you assign the auto value to the margin property, the positive free space will be taken up.
+        */
+        .movie-rate {
+            margin-left: auto;
+        }
+    }
+
+    .movie-name {
+
+    }
+    .movie-description {
+
+    }
+    .movie-hour {
+
+    }
+}

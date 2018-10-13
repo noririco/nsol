@@ -9,10 +9,12 @@ import { Movie } from './../model/movie.model';
 })
 export class MovieDetailsComponent implements OnInit {
   moviex: Movie;
+  youtubeLink: string;
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.moviex = this.route.snapshot.data["movie"];
+    this.youtubeLink = this.moviex.promoUrl;
   }
 
 }

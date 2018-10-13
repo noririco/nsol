@@ -9,8 +9,8 @@ import {AppState} from './reducers';
 import {Logout} from './auth/auth.actions';
 import {map, tap, switchMap, mergeMap} from 'rxjs/operators';
 import { isLoggedIn, isLoggedOut, currentUser, selectAuthState } from './auth/auth.selectors';
-import {Router, RouterOutlet} from '@angular/router';
-import { NowtimeComponent } from './shared/components/nowtime/nowtime.component';
+import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,6 +21,7 @@ import { NowtimeComponent } from './shared/components/nowtime/nowtime.component'
   ]
 })
 export class AppComponent implements OnInit {
+    window : Element;
 
     isLoggedIn$: Observable<boolean>;
 
@@ -30,11 +31,22 @@ export class AppComponent implements OnInit {
 
     slideUpDownState: boolean;
 
+    isRouteAnimationDone: boolean;
+
     constructor(private store: Store<AppState>, private router: Router) {
       this.slideUpDownState = false;
+      this.isRouteAnimationDone = false;
     }
 
     ngOnInit() {
+
+      this.router.events.subscribe(event => {
+        // Scroll to top if accessing a page, not via browser history stack
+        if (event instanceof NavigationEnd) {
+            const contentContainer = document.querySelector('.mat-sidenav-content') || this.window;
+            contentContainer.scrollTo(0, 0);
+        }
+    });
 
       /**
        * NOTE: Check if logged in, if does, get the currentUser email (identifier)
@@ -78,5 +90,13 @@ export class AppComponent implements OnInit {
 
     toggleSlideUpDown() {
       this.slideUpDownState = !this.slideUpDownState;
+    }
+
+    routeAnimationDone($event) {
+      this.isRouteAnimationDone = true;
+    }
+
+    routeAnimationStart($event) {
+      this.isRouteAnimationDone = false;
     }
 }

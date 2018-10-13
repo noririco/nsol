@@ -1,8 +1,12 @@
+@import '~@angular/material/theming';
+@import 'styles.scss';
 
 
 .login-page {
+  background-color: mat-color($primary, lighter);
   max-width: 350px;
-  margin: 50px auto 0 auto;
+  margin: 50px;
+  margin-top: 30vh;
 }
 
 .login-form {

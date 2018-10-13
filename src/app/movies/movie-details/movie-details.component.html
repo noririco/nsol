@@ -1,17 +1,13 @@
-<p>
-  movie-details works!
-</p>
-
 <div class="movie-details-page">
-  <h2>{{moviex?.name}}</h2>
-  <h5>{{moviex?.year}}</h5>
-  <h5>{{moviex?.category}}</h5>
-  <h5>{{moviex?.description}}</h5>
-  <h5>{{moviex?.imageUrl}}</h5>
-  <h5>{{moviex?.promoUrl}}</h5>
-  <iframe width="560" height="315" [src]="moviex?.promoUrl | youtubeSanitizer" frameborder="0" allowfullscreen></iframe>
-  <h5>{{moviex?.rate}}</h5>
-  <h5>{{moviex?.hour}}</h5>
+  <h1 class="movie-name">{{moviex?.name}}</h1>
+  <div class="movie-details-subtitles">
+    <p class="movie-year">{{moviex?.year}}</p>
+    <p class="seperator">|</p>
+    <p class="movie-category">{{moviex?.category | titlecase}}</p>
+    <p class="movie-rate">Rating: {{moviex?.rate}}</p>
+  </div>
+  <h2 class="movie-description">{{moviex?.description}}</h2>
+  <iframe width="100%" height="300" [src]="moviex?.promoUrl | youtubeSanitizer" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
