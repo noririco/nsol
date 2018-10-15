@@ -3,66 +3,66 @@
 
 
 
-.sidenavContainer {
-    background-color: $bg-black;
+// .sidenavContainer {
+//     background-color: $bg-black;
     
     
-    .routerOutlet-content {
-        min-height: 80vh;
-        margin-top: 12vh;
-    }
+//     .routerOutlet-content {
+//         min-height: 80vh;
+//         margin-top: 12vh;
+//     }
     
-    .toolbar-main{
-        height: 12vh;
-        position: fixed;
-        z-index: 11;
+//     .toolbar-main{
+//         height: 12vh;
+//         position: fixed;
+//         z-index: 11;
     
-        .menu-button {
-            background: mat-color($primary,lighter);
-            color: mat-color($primary);
-            border: none;
-            cursor:pointer;
-            outline:none;
-            margin-top: 1em;
-        }
+//         .menu-button {
+//             background: mat-color($primary,lighter);
+//             color: mat-color($primary);
+//             border: none;
+//             cursor:pointer;
+//             outline:none;
+//             margin-top: 1em;
+//         }
         
-        .toolbar-logo {
-            font-size: 0.7em;
-        }
+//         .toolbar-logo {
+//             font-size: 0.7em;
+//         }
 
-        .toolbar-quote-title {
-            font-size: 0.7em;
-            margin-left: 0.3rem;
-            font-style: italic;
-        }
+//         .toolbar-quote-title {
+//             font-size: 0.7em;
+//             margin-left: 0.3rem;
+//             font-style: italic;
+//         }
         
-        .toolbar-username {
-            font-size: 0.7em;
-            margin-left: 0.3rem;
-        }
+//         .toolbar-username {
+//             font-size: 0.7em;
+//             margin-left: 0.3rem;
+//         }
         
-        .toolbar-usericon {
-            width: 1.5em;
-            img {
-                width:100%;
-            }
-        }
-    }
-    .toolbar-footer {
-        height: 8vh;
-        background-color: mat-color($primary);
-        color: white;
-        justify-content: center;
-        position: sticky;
-        // &:after {
-        //     content: 'My Application';
-        //     transform: translateX(-99%);
-        //     color: gray;
-        // }
-    }
-}
+//         .toolbar-usericon {
+//             width: 1.5em;
+//             img {
+//                 width:100%;
+//             }
+//         }
+//     }
+//     .toolbar-footer {
+//         height: 8vh;
+//         background-color: mat-color($primary);
+//         color: white;
+//         justify-content: center;
+//         position: sticky;
+//         // &:after {
+//         //     content: 'My Application';
+//         //     transform: translateX(-99%);
+//         //     color: gray;
+//         // }
+//     }
+// }
 
-main {
-    margin: 30px;
-}
+// main {
+//     margin: 30px;
+// }
 

@@ -1,14 +1,9 @@
-import { routeAnimation2 } from './shared/_animations/routeAnimation2';
 import { routeAnimation } from './shared/_animations/routeAnimation';
-
 import { User } from './model/user.model';
 import {Component, OnInit} from '@angular/core';
-import {select, Store} from "@ngrx/store";
+import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
 import {AppState} from './reducers';
-import {Logout} from './auth/auth.actions';
-import {map, tap, switchMap, mergeMap} from 'rxjs/operators';
-import { isLoggedIn, isLoggedOut, currentUser, selectAuthState } from './auth/auth.selectors';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -16,8 +11,7 @@ import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    routeAnimation,
-    routeAnimation2
+    routeAnimation
   ]
 })
 export class AppComponent implements OnInit {
@@ -44,43 +38,43 @@ export class AppComponent implements OnInit {
         // Scroll to top if accessing a page, not via browser history stack
         if (event instanceof NavigationEnd) {
             const contentContainer = document.querySelector('.mat-sidenav-content') || this.window;
-            contentContainer.scrollTo(0, 0);
+            // contentContainer.scrollTo(0, 0);
         }
-    });
+      });
 
       /**
        * NOTE: Check if logged in, if does, get the currentUser email (identifier)
        */
-      this.isLoggedIn$ = this.store
-        .pipe(
-          select(isLoggedIn),
-          tap(loggedIn => {
-            if(loggedIn) {
-              this.router.navigateByUrl('/movies');
-            }
-          })
-        );
+      // this.isLoggedIn$ = this.store
+      //   .pipe(
+      //     select(isLoggedIn),
+      //     tap(loggedIn => {
+      //       if(loggedIn) {
+      //         this.router.navigateByUrl('/movies');
+      //       }
+      //     })
+      //   );
 
-      this.currentUser$ = this.store
-      .pipe(
-        select(currentUser),
-        map((user) => {
-          if(user) return user.email
-        })
-      );
+      // this.currentUser$ = this.store
+      // .pipe(
+      //   select(currentUser),
+      //   map((user) => {
+      //     if(user) return user.email
+      //   })
+      // );
 
-      this.isLoggedOut$ = this.store
-        .pipe(
-          select(isLoggedOut)
-        );
-
-    }
-
-    logout() {
-
-      this.store.dispatch(new Logout());
+      // this.isLoggedOut$ = this.store
+      //   .pipe(
+      //     select(isLoggedOut)
+      //   );
 
     }
+
+    // logout() {
+
+    //   this.store.dispatch(new Logout());
+
+    // }
 
     getDepth(outlet : RouterOutlet) {
       // console.log(outlet.activatedRouteData['animation']);

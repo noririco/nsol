@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 import { MoviesService } from './services/movies.service';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
@@ -11,7 +12,6 @@ import { MovieResolver } from "./services/movie.resolver";
 import { moviesReducer } from './movie.reducers';
 import { MovieEffects } from './movie.effects';
 import { YoutubeSanitizerPipe } from './../shared/pipes/youtube-sanitizer.pipe';
-
 
 
 //Angular Material
@@ -42,11 +42,7 @@ export const moviesRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    MatListModule,
-    MatIconModule,
-    MatCardModule,
-    MatButtonToggleModule,
-    MatProgressSpinnerModule,
+    SharedModule,
     RouterModule.forChild(moviesRoutes),
     StoreModule.forFeature('movies', moviesReducer),
     EffectsModule.forFeature([MovieEffects])

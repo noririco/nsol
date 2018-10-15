@@ -1,64 +1,16 @@
-<div class="routeContainer"
- [@routeAnimation]="getDepth(myOutlet)"
- (@routeAnimation.start)="routeAnimationStart($event)"
- (@routeAnimation.done)="routeAnimationDone($event)">
-    <mat-sidenav-container fullscreen class="sidenavContainer">
-    
-        <mat-sidenav #start>
-            <mat-nav-list (click)="start.close()">
-    
-                <!-- <a mat-list-item routerLink="/courses">
-                    <mat-icon>library_books</mat-icon>
-                    <span>Courses</span>
-                </a> -->
-                <a mat-list-item routerLink="/movies">
-                    <mat-icon>library_books</mat-icon>
-                    <span>Movies</span>
-                </a>
-    
-                <a mat-list-item routerLink="/login" *ngIf="isLoggedOut$ | async">
-                    <mat-icon>account_circle</mat-icon>
-                    <span>Login</span>
-                </a>
-    
-                <a mat-list-item  (click)="logout()" *ngIf="isLoggedIn$ | async">
-                    <mat-icon>exit_to_app</mat-icon>
-                    <span>Logout</span>
-                </a>
-    
-            </mat-nav-list>
-    
-        </mat-sidenav>
-    
-        <mat-toolbar color="primary" class="toolbar-main">
-            <mat-toolbar-row>
-                <span class="toolbar-logo">NSNSOLUTIONS</span>
-                <!-- This fills the remaining space of the current row -->
-                <span class="toolbar-quote-title"><small>when poclmicated becomes simple..</small></span>
-                <span class="example-fill-remaining-space"></span>
-                <span class="example-fill-remaining-space"></span>
-                <span>
-                    <button class="menu-button" mat-icon-button (click)="start.open('mouse')">
-                        <mat-icon>menu</mat-icon>
-                    </button>
-                </span>
-            </mat-toolbar-row>
-            <mat-toolbar-row *ngIf="isLoggedIn$ | async">
-                <span class="toolbar-usericon"><a href="https://placeholder.com"><img src="https://png.icons8.com/dusk/50/000000/support.png"></a></span>
-                <span class="toolbar-username"><small>{{currentUser$ | async}}</small></span>
-                <span class="example-fill-remaining-space"></span>
-                <app-nowtime></app-nowtime>
-            </mat-toolbar-row>         
-        </mat-toolbar>
 
-        <div class="routerOutlet-content">
-            <router-outlet #myOutlet="outlet"></router-outlet>
-        </div>
-        
-        
-            <mat-toolbar class="toolbar-footer" *ngIf="isRouteAnimationDone">
-                    <span class="toolbar-footer-sign">nsnsolutions @ 2018</span>
-            </mat-toolbar>
-       
-    </mat-sidenav-container>
-</div>
+  <flexboxy>
+      <div class="routeContainer"
+          [@routeAnimation]="getDepth(myOutlet)"
+          (@routeAnimation.start)="routeAnimationStart($event)"
+          (@routeAnimation.done)="routeAnimationDone($event)">
+  
+          <div class="routerOutlet-content">
+              <router-outlet #myOutlet="outlet"></router-outlet>
+          </div>
+      </div>
+  </flexboxy>
+
+
+
+    

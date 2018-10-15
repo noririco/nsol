@@ -4,12 +4,14 @@
 .movie-details-page {
     display: flex;
     flex-direction: column;
-    padding: 1em;
-    color : mat-color($primary, lighter);
+    background-color: mat-color($primary, lighter);
+    padding: 1rem;
+    color : $primary-text;
+    min-height: 80vh;
 
-    * {
-        margin-bottom: 2rem;
-    }
+    // * {
+    //     margin-bottom: 2rem;
+    // }
 
     .movie-details-subtitles {
         display: flex;
@@ -43,4 +45,9 @@
     .movie-hour {
 
     }
-}
+
+    .movie-promo {
+        @include autoResizeableYoutubeVideo();
+    }
+  
+    }

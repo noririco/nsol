@@ -7,22 +7,40 @@
 
 .movie-item {
     cursor: pointer;
+    display: flex;
     // border: 2px solid mat-color($primary,darker);
     border-radius: 0.2rem;
-    background-color: mat-color($primary,lighter);
-
+    background-color: $bg-main;
+    color: mat-color($primary,darker);
+    
     @include shadowBoxEffect();
     
     &:focus {
         outline: none;
     }
     
-    a {
-        text-decoration: none;
-        font-weight: 800;
+    .movie-icon {
+        
     }
 
-    .movie-icon {
-        color: mat-color($primary,darker);
+    .list-item-content {
+        display: flex;
+        flex-direction: column;
+        p {
+            margin: 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .content-sub{
+            display: flex;
+            p {
+                font-weight: 400;
+                color: mat-color($primary,lighter);
+                font-size: 0.8rem;
+                margin-right: 0.2rem;
+            }
+        }
     }
+    
 }

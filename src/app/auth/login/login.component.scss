@@ -3,10 +3,9 @@
 
 
 .login-page {
-  background-color: mat-color($primary, lighter);
+  background-color: $bg-main;
   max-width: 350px;
   margin: 50px;
-  margin-top: 30vh;
 }
 
 .login-form {

@@ -1,0 +1,74 @@
+
+@import '~@angular/material/theming';
+@import 'styles.scss';
+
+.container {
+    // height: $layout-height;
+    min-height: 100%;
+    // text-align: center;
+
+    .header {
+        overflow:hidden;
+        .toolbar-main{
+            height: $header-height;
+            position: fixed;
+            z-index: 11;
+
+            .menu-button {
+                background: mat-color($primary,lighter);
+                color: mat-color($primary);
+                border: none;
+                cursor:pointer;
+                outline:none;
+                margin-top: 1em;
+            }
+            
+            .toolbar-logo {
+                font-size: 0.7em;
+            }
+
+            .toolbar-quote-title {
+                font-size: 0.7em;
+                margin-left: 0.3rem;
+                font-style: italic;
+            }
+            
+            .toolbar-username {
+                font-size: 0.7em;
+                margin-left: 0.3rem;
+            }
+            
+            .toolbar-usericon {
+                width: 1.5em;
+                img {
+                    width:100%;
+                }
+            }
+        }
+    }
+    .content {
+        overflow:auto;
+        margin-top: $header-height;
+        // min-height: $layout-height - $footer-height;
+        // overflow-y: auto;
+        // margin-bottom: $footer-height;
+    }
+    .footer {
+        overflow:hidden;
+        .toolbar-footer {
+            // height: $footer-height;
+            background-color: mat-color($primary);
+            color: white;
+            justify-content: center;
+            position: sticky;
+            z-index: 111;
+            // &:after {
+            //     content: 'My Application';
+            //     transform: translateX(-99%);
+            //     color: gray;
+            // }
+        }
+
+    }
+
+}

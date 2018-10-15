@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="header">
+        <mat-toolbar color="primary" class="toolbar-main">
+            <mat-toolbar-row>
+                <span class="toolbar-logo">NSNSOLUTIONS</span>
+                <!-- This fills the remaining space of the current row -->
+                <span class="toolbar-quote-title"><small>when poclmicated becomes simple..</small></span>
+                <span class="example-fill-remaining-space"></span>
+                <span class="example-fill-remaining-space"></span>
+                <!-- <span>
+                    <button class="menu-button" mat-icon-button (click)="start.open('mouse')">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </span> -->
+            </mat-toolbar-row>
+            <mat-toolbar-row *ngIf="isLoggedIn$ | async">
+                <span class="toolbar-usericon" [matMenuTriggerFor]="menu">
+                    <img src="https://png.icons8.com/dusk/50/000000/support.png">
+                </span>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="logout()">
+                        <mat-icon>logout</mat-icon>
+                        <span>Logout</span>
+                    </button>
+                </mat-menu>
+                <span class="toolbar-username" >
+                    <small>{{currentUser$ | async}}</small>
+                </span>
+                <span class="example-fill-remaining-space"></span>
+                <app-nowtime></app-nowtime>
+            </mat-toolbar-row>         
+        </mat-toolbar>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+  <div class="footer">
+        <mat-toolbar class="toolbar-footer">
+            <span class="toolbar-footer-sign">nsnsolutions @ 2018</span>
+      </mat-toolbar>
+  </div>
+</div>

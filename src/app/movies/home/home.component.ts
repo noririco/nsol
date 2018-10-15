@@ -9,7 +9,6 @@ import { AppState } from './../../reducers/index';
 import { Movie } from './../model/movie.model';
 import { listStaggerAnimation } from './../../shared/_animations/listStaggerAnimation';
 
-
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',

@@ -12,8 +12,7 @@
 }
 
 .mat-card {
-    background-color: $bg-black;
-
+    background-color: mat-color($primary, lighter);
     .sortingBtn {
         background-color: mat-color($primary, darker);
         color: black;

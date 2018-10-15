@@ -16,47 +16,59 @@
     }
 */
 
-$mat-custom-theme: (
-        50: #e8f5e9,
-        100: #c8e6c9,
-        200: #a5d6a7,
-        300: #81c784,
-        400: #66bb6a,
-        500: #3dc046,
-        600: #43a047,
-        700: #388e3c,
-        800: #2e7d32,
-        900: #1b5e20,
-        A100: #b9f6ca,
-        A200: #69f0ae,
-        A400: #00e676,
-        A700: #00c853,
-        contrast: (
-                50: $dark-primary-text,
-                100: $dark-primary-text,
-                200: $dark-primary-text,
-                300: $dark-primary-text,
-                400: $dark-primary-text,
-                500: $light-primary-text,
-                600: $light-primary-text,
-                700: $light-primary-text,
-                800: $light-primary-text,
-                900: $light-primary-text,
-                A100: $dark-primary-text,
-                A200: $light-primary-text,
-                A400: $light-primary-text,
-                A700: $light-primary-text,
-        )
-);
-$bg-black : rgba(29, 28, 28, 0.85);
+// 
 
-$primary : mat-palette($mat-custom-theme, 700, 200, 800);
-$accent : mat-palette($mat-custom-theme, 500, 800, 200);
+$md-nsnblue: (
+    50 : #e2e8ec,
+    100 : #b8c6d0,
+    200 : #88a1b0,
+    300 : #587b90,
+    400 : #355e79,
+    500 : #114261,
+    600 : #0f3c59,
+    700 : #0c334f,
+    800 : #0a2b45,
+    900 : #051d33,
+    A100 : #6cafff,
+    A200 : #3993ff,
+    A400 : #0677ff,
+    A700 : #006bec,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+// $bg-black : rgba(29, 28, 28, 0.85);
+$bg-main: white;
+$primary-text : white;
+
+$layout-height : 100vh;
+$header-height : 12vh;
+$footer-height : 8vh;
+$content-height : calc($layout-height - $footer-height - $footer-height);
+
+
+
+$primary : mat-palette($md-nsnblue, 400, 200, 500);
+$accent : mat-palette($md-nsnblue, A400, 300, 700);
 $warn : mat-palette($mat-red);
 $is-dark : false;
-$foreground : mat-palette($mat-custom-theme, 500, 800, 200);
-$background : mat-palette($mat-custom-theme, 500, 800, 200);
+$foreground : mat-palette($md-nsnblue, 500, 800, 200);
+$background : mat-palette($md-nsnblue, 500, 800, 200);
 
-$nsngreen-theme: mat-light-theme($primary, $accent, $warn);
+$nsnblue-theme: mat-light-theme($primary, $accent, $warn);
 
-@include angular-material-theme($nsngreen-theme);
+@include angular-material-theme($nsnblue-theme);
+// @include angular-material-theme($nsngreen-theme);

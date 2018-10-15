@@ -1,10 +1,16 @@
 <mat-list class="movie-list" *ngFor="let movie of movies">
-  <div class="note-line" *ngIf="movie.id == 1004"><small>fetching id:1003 since its a problem on the server, also year is 2015</small></div>
-  <div class="note-line" *ngIf="movie.id == 1007"><small>this has 19999 year in list  and 1999 year in description</small></div>
+  <!-- <div class="note-line" *ngIf="movie.id == 1004"><small>fetching id:1003 since its a problem on the server, also year is 2015</small></div>
+  <div class="note-line" *ngIf="movie.id == 1007"><small>this has 19999 year in list  and 1999 year in description</small></div> -->
   <mat-list-item class="movie-item" [routerLink]="['/movies/', movie.id]"> 
-    <mat-icon class="movie-icon" >details</mat-icon>
-    <p>{{movie.name}}</p>
-    <span class="example-fill-remaining-space"></span>
-    <p>{{movie.year}}</p>
+    <mat-icon class="movie-icon">arrow_forward_ios</mat-icon>
+    <div class="list-item-content">
+      <p>{{movie.name}}</p>
+      <!-- <span class="example-fill-remaining-space"></span> -->
+      <div class="content-sub">
+        <p>{{movie.year}}</p>
+        <p>|</p>
+        <p>{{movie.category | titlecase}}</p>
+      </div>
+    </div>
   </mat-list-item>
 </mat-list>

@@ -1,16 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 
 import {NgModule} from '@angular/core';
-
+import { SharedModule } from './shared/shared.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
 
-import {
-    MatListModule,
-    MatSidenavModule, MatToolbarModule,
-} from "@angular/material";
 import {HttpClientModule} from "@angular/common/http";
 
 import {RouterModule, Routes} from "@angular/router";
@@ -24,8 +18,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers, metaReducers } from './reducers';
 import {AuthGuard} from './auth/auth.guard';
 import {CustomSerializer} from './shared/utils';
-import { NowtimeComponent } from './shared/components/nowtime/nowtime.component';
 
+import { FlexlComponent } from './shared/layouts/flexl/flexl.component';
 
 const routes: Routes = [
     // {
@@ -49,19 +43,14 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [
-        AppComponent,
-        NowtimeComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(routes),
+        SharedModule,
         HttpClientModule,
-        MatMenuModule,
-        MatIconModule,
-        MatSidenavModule,
-        MatListModule,
-        MatToolbarModule,
         AuthModule.forRoot(),
         StoreModule.forRoot(reducers, { metaReducers }),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
