@@ -8,7 +8,7 @@ import { AppState } from './../../../reducers/index';
 import { Store } from '@ngrx/store';
 import { User } from './../../../model/user.model';
 import { Observable } from 'rxjs/Observable';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'flexboxy',
@@ -39,7 +39,7 @@ export class FlexboxyComponent implements OnInit {
       .pipe(
         select(currentUser),
         map((user) => {
-          if(user) return user.email
+          if(user) return (user.email).replace(/@.*/, "");
       })
     );
 

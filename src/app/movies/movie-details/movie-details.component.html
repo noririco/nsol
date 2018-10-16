@@ -8,12 +8,15 @@
       <p class="movie-rate">Rating: {{moviex?.rate}}</p>
     </div>
     <h2 class="movie-description">{{moviex?.description}}</h2>
-    <div class="movie-promo">
-        <iframe
-          frameborder="0"
-          allowfullscreen=""
-          [src]="moviex?.promoUrl | youtubeSanitizer">
-          </iframe>
-      </div>
+    <div class="movie-promo" *ngIf="moviex?.promoUrl; else noVidErrorSection">
+      <iframe
+        frameborder="0"
+        allowfullscreen=""
+        [src]="moviex?.promoUrl | youtubeSanitizer">
+        </iframe>
+    </div>
+    <ng-template #noVidErrorSection>
+      <img src="assets/images/no-video.gif" alt="" width="100%">
+    </ng-template>
   </div>
 

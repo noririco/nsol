@@ -11,19 +11,52 @@
     z-index: 1;
 }
 
+
+
 .mat-card {
-    background-color: mat-color($primary, lighter);
-    .sortingBtn {
-        background-color: mat-color($primary, darker);
-        color: black;
-        margin-right: 0.2rem;
-    }
+    // background-color: mat-color($primary, lighter);
+    display:flex;
+    flex-direction: column;
+    // align-items: flex-start;
+    background: none;
+    border:none;
+    color: $primary-text;
+    // margin-right: 0.2rem;
+    // justify-content: center;
+    // padding:0 !important;
 
     .card-title {
-        color: mat-color($primary, darker);
+        margin-bottom: 7px;
+        font-size: 2rem;
     }
 
     .card-subtitle {
-        color: mat-color($primary, lighter);
+        color: mat-color($primary);
+        font-size: 1.4rem;
     }
+
+    .card-sort {
+        display: flex;
+        padding:0.9em;
+        margin-left: -14px !important;
+        margin-bottom: 0px !important;
+
+        .card-sort-title {
+            font-size: 1.2rem;
+        }
+
+        .sortingGroup {
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            .sortingBtn {
+                background-color: none;
+                color: $primary-text;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+
+    
 }

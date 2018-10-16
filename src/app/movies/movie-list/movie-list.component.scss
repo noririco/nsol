@@ -1,10 +1,6 @@
 @import '~@angular/material/theming';
 @import 'styles.scss';
 
-.note-line {
-    color: mat-color($warn,darker);
-}
-
 .movie-item {
     cursor: pointer;
     display: flex;

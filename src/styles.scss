@@ -15,3 +15,23 @@ body {
 .example-fill-remaining-space {
     flex: 1 1 auto;
 }
+
+.note-line {
+    color: mat-color($warn,darker);
+}
+
+
+//force mat button to  padding;
+.mat-button-toggle-label-content{
+    padding:0.3rem !important;
+}
+
+.mat-menu-panel {
+    background-color: mat-color($primary, lighter) !important;
+    border: 1px solid white;
+}
+.mat-menu-item {
+    color: mat-color($primary, darker) !important;
+}
+
+

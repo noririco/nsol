@@ -31,16 +31,6 @@ export class MoviesService {
       {"id":"1007", "name":"Fight Club","year":1999,"category":"Drama"},
       {"id":"1008", "name":"Ra'kevet ha'kerakh","year":2013,"category":"action"},
       {"id":"1009", "name":"Gladiator","year":2000,"category":"Drama"},
-      {"id":"1000", "name":"Suicide Squad","year":2016,"category":"action"},
-      {"id":"1001", "name":"Batman v Superman: Dawn of Justice","year":2016,"category":"action"},
-      {"id":"1002", "name":"Focus","year":2015,"category":"comedy"},
-      {"id":"1003", "name":"Bajrangi Bhaijaan","year":2015,"category":"comedy"},
-      {"id":"1004", "name":"The Dark Knight","year":2015,"category":"drama"},
-      {"id":"1005", "name":"Harry Potter veotzarot hamavet","year":2011,"category":"Fantasy"},
-      {"id":"1006", "name":"Hasandak ","year":1972,"category":"Crime"},
-      {"id":"1007", "name":"Fight Club","year":1999,"category":"Drama"},
-      {"id":"1008", "name":"Ra'kevet ha'kerakh","year":2013,"category":"action"},
-      {"id":"1009", "name":"Gladiator","year":2000,"category":"Drama"},
      
     ];
 

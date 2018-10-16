@@ -6,17 +6,19 @@
     
     <mat-card-title class="card-title">My Movies</mat-card-title>
     <mat-card-subtitle class="card-subtitle">Here for me anytime...</mat-card-subtitle>
-    <mat-card-actions>
-      <mat-button-toggle-group>
-        <mat-button-toggle *ngFor="let cat of sortCategories; let index=i"
+    <!-- <mat-card-actions class="card-sort">
+      <p class="card-sort-title">Sort by:</p>
+      <mat-button-toggle-group class="sortingGroup" *ngFor="let cat of sortCategories; let i=index">
+        <mat-button-toggle 
         value="{{cat}}"
         class="sortingBtn"
         (change)="toggleChange($event)">
-          {{cat}}
+          {{cat | titlecase}}
         </mat-button-toggle>
+        <p *ngIf="i < (sortCategories.length - 1)">|</p>
       </mat-button-toggle-group>
     
-    </mat-card-actions>
+    </mat-card-actions> -->
     <mat-card-content>
       <movie-list
           [@listStaggerAnimation]

@@ -1,26 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes} from '@angular/router';
+
+//Custome Modules
 import { SharedModule } from '../shared/shared.module';
+//Services
 import { MoviesService } from './services/movies.service';
+//Store
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { RouterModule, Routes} from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieResolver } from "./services/movie.resolver";
 import { moviesReducer } from './movie.reducers';
 import { MovieEffects } from './movie.effects';
-import { YoutubeSanitizerPipe } from './../shared/pipes/youtube-sanitizer.pipe';
+//Components
+import { HomeComponent } from './home/home.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
-
-//Angular Material
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-import {MatProgressSpinnerModule} from '@angular/material';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-
+//Routing, possible to move this into own module movies.routing.ts
 export const moviesRoutes: Routes = [
   {
       path: "",
@@ -38,6 +35,12 @@ export const moviesRoutes: Routes = [
   }
 ];
 
+/**
+ * NOTE:
+ * This module is a Feature module,
+ * the module contains all the logic for the Feature
+ * and encapsulate it. this is also lazy-loaded via the app module.
+ */
 //WORKFLOW: ((10)) Adding StoreModule.forFeature and EffectsModule.forFeature to the feature module
 @NgModule({
   imports: [
@@ -47,8 +50,8 @@ export const moviesRoutes: Routes = [
     StoreModule.forFeature('movies', moviesReducer),
     EffectsModule.forFeature([MovieEffects])
   ],
-  declarations: [HomeComponent, MovieListComponent, MovieDetailsComponent, YoutubeSanitizerPipe],
-  exports: [HomeComponent, MovieListComponent, MovieDetailsComponent, YoutubeSanitizerPipe],
+  declarations: [HomeComponent, MovieListComponent, MovieDetailsComponent],
+  exports: [HomeComponent, MovieListComponent, MovieDetailsComponent],
   providers: [MoviesService,MovieResolver]
 })
 export class MoviesModule { }

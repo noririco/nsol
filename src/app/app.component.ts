@@ -17,12 +17,6 @@ import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 export class AppComponent implements OnInit {
     window : Element;
 
-    isLoggedIn$: Observable<boolean>;
-
-    isLoggedOut$: Observable<boolean>;
-
-    currentUser$: Observable<User>;
-
     slideUpDownState: boolean;
 
     isRouteAnimationDone: boolean;
@@ -42,39 +36,7 @@ export class AppComponent implements OnInit {
         }
       });
 
-      /**
-       * NOTE: Check if logged in, if does, get the currentUser email (identifier)
-       */
-      // this.isLoggedIn$ = this.store
-      //   .pipe(
-      //     select(isLoggedIn),
-      //     tap(loggedIn => {
-      //       if(loggedIn) {
-      //         this.router.navigateByUrl('/movies');
-      //       }
-      //     })
-      //   );
-
-      // this.currentUser$ = this.store
-      // .pipe(
-      //   select(currentUser),
-      //   map((user) => {
-      //     if(user) return user.email
-      //   })
-      // );
-
-      // this.isLoggedOut$ = this.store
-      //   .pipe(
-      //     select(isLoggedOut)
-      //   );
-
     }
-
-    // logout() {
-
-    //   this.store.dispatch(new Logout());
-
-    // }
 
     getDepth(outlet : RouterOutlet) {
       // console.log(outlet.activatedRouteData['animation']);
